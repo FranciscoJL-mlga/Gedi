@@ -19,4 +19,9 @@ class Departamento extends Model
         return $this->hasMany(Usuario::class, "idDep");
     }
     
+    public function despachos()
+    {
+        return $this->belongsToMany(Edificio::class,"departamento_edificio","idDep","idEdi");
+    }
+
 }

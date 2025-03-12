@@ -19,8 +19,10 @@ class Edificio extends Model
     {
         return $this->belongsTo(Usuario::class,"idUsu");
     }
-    public function despachos()
+
+    public function departamentos()
     {
-        return $this->belongsMany(Departamento::class,"departamento_edificio"."idDep","idEdi");
+        return $this->belongsToMany(Departamento::class, 'departamento_edificio', 'idEdi', 'idDep');
     }
+  
 }

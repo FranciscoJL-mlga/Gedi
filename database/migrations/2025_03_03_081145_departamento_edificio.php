@@ -15,9 +15,10 @@ return new class extends Migration
         {
             $table->id('idDE') ;
 
-            $table->foreignId('idDep')->constrained('departamento', 'idDep') ;
-            $table->foreignId('idEdi')->constrained('edificio', 'idEdi') ;
+            $table->foreignId('idDep')->constrained('departamento', 'idDep');
+            $table->foreignId('idEdi')->constrained('edificio', 'idEdi')->onDelete("cascade") ;
             $table->integer('despachos');
+            $table->unique(['idDep', 'idEdi']);
         });
     }
 

@@ -1,17 +1,30 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
+@extends("plantilla")
+@section("contenido")
+
+
+
+
+<div class="bg-white p-6 rounded-2xl shadow-lg max-w-sm">
+
+        <form action="">
+        <label for="departamentos" class="block text-xl font-semibold text-gray-700 mb-2">Elige un departamento:</label>
+        <select name="departamentos" id="departamentos" class="w-full p-2 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200">
+            <option value="" selected>Otro</option>
+            <option value="informatica">Departamento de Informática</option>
+            <option value="electronica">Departamento de Electrónica</option>
+            <option value="lengua_literatura">Departamento de Lengua y Literatura</option>
+            <option value="salud">Departamento de Salud</option>
+            <option value="geografia_historia">Departamento de Geografía e Historia</option>
+            <option value="educacion_fisica">Departamento de Educación Física</option>
+            <option value="publicidad">Departamento de Publicidad</option>
+            <option value="calidad">Departamento de Calidad</option>
+        </select>
+        
+        <button class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-200">
+            Enviar
+        </button>
+    </form>
     </div>
-</x-app-layout>
+
+@endsection

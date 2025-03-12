@@ -19,8 +19,8 @@ class EdificioFactory extends Factory
         return [
             'nombre' => fake()->word(),
             'calle' => "C// ".fake()->lastName(),
-            'numero' => fake()->name(),
-            'cp' => fake()->number(5,true),
+            'numero' => fake()->randomNumber()>0,
+            'cp' => fake()->postcode(),
         ];
     }
 }
